@@ -1,4 +1,6 @@
-FROM node:14.8.0-stretch
+ARG BASE_IMAGE=node:14.8.0-stretch
+
+FROM $BASE_IMAGE
 
 RUN mkdir -p /usr/src/app && \
     chown node:node /usr/src/app
