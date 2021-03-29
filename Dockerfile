@@ -9,6 +9,13 @@ WORKDIR /usr/src/app
 
 COPY --chown=node:node . . 
 
+ENV MYDIRS="/usr/src/app"
+RUN chown -R 1001:0 ${MYDIRS} &&\
+    chmod -R g=u ${MYDIRS} &&\
+    chgrp -R 0 ${MYDIRS}
+
+USER 1001
+
 RUN npm install && \
     npm install redis@0.8.1 && \
     npm install pg@4.1.1 && \
@@ -60,10 +67,5 @@ ENTRYPOINT [ "bash", "docker-entrypoint.sh" ]
 
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s \
     --retries=3 CMD [ "curl" , "-f" "localhost:${PORT}", "||", "exit", "1"]
-
-ENV MYDIRS="/usr/src/app"
-RUN chown -R 1001:0 ${MYDIRS} &&\
-    chmod -R g=u ${MYDIRS} &&\
-    chgrp -R 0 ${MYDIRS}
 
 CMD ["npm", "start"]
