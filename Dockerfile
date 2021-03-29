@@ -60,4 +60,10 @@ ENTRYPOINT [ "bash", "docker-entrypoint.sh" ]
 
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s \
     --retries=3 CMD [ "curl" , "-f" "localhost:${PORT}", "||", "exit", "1"]
+
+ENV MYDIRS="/usr/src/app"
+RUN chown -R 1001:0 ${MYDIRS} &&\
+    chmod -R g=u ${MYDIRS} &&\
+    chgrp -R 0 ${MYDIRS}
+
 CMD ["npm", "start"]
