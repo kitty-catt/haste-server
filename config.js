@@ -33,6 +33,7 @@
   },
 
   "storage": {
+    "path": "./data",
     "type": "file"
   },
 
