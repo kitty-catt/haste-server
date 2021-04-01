@@ -19,44 +19,44 @@ https://github.com/containers/buildah/pull/2823
 
 # BuildConfig based approach (does not work)
 
-spec:
-  ..
-  source:
-    git:
-      ref: build-arguments
-      uri: https://github.com/kitty-catt/haste-server
-    type: Git
-  strategy:
-    dockerStrategy:
-      buildArgs:
-      - name: BASE_IMAGE
-        value: node:15.12.0-stretch
-      env:
-      - name: BUILD_LOGLEVEL
-        value: "4"
-      - name: BASE_IMAGE
-        value: node:15.12.0-buster
-      from:
-        kind: ImageStreamTag
-        name: node:14.8.0-stretch
-    type: Docker
+    spec:
+      ..
+      source:
+        git:
+          ref: build-arguments
+          uri: https://github.com/kitty-catt/haste-server
+        type: Git
+      strategy:
+        dockerStrategy:
+          buildArgs:
+          - name: BASE_IMAGE
+            value: node:15.12.0-stretch
+          env:
+          - name: BUILD_LOGLEVEL
+            value: "4"
+          - name: BASE_IMAGE
+            value: node:15.12.0-buster
+          from:
+            kind: ImageStreamTag
+            name: node:14.8.0-stretch
+        type: Docker
 
 
 # Podman Procedure (works)
 
-git clone https://github.com/kitty-catt/haste-server
-git checkout build-arguments
+    git clone https://github.com/kitty-catt/haste-server
+    git checkout build-arguments
 
-sudo podman build -t hastebin --build-arg  BASE_IMAGE=node:15.12.0-stretch .
+    sudo podman build -t hastebin --build-arg  BASE_IMAGE=node:15.12.0-stretch .
 
-sudo podman run --name hastebin -p 8080:7777 localhost/hastebin
-open http://localhost:8080 in a browser
+    sudo podman run --name hastebin -p 8080:7777 localhost/hastebin
+    open http://localhost:8080 in a browser
 
-sudo podman exec -it hastebin bash
-sudo podman stop hastebin
-sudo podman rm hastebin
+    sudo podman exec -it hastebin bash
+    sudo podman stop hastebin
+    sudo podman rm hastebin
 
-oc new-app --name=hastebin --as-deployment-config --build-env BASE_IMAGE=node:15.12.0-stretch https://github.com/kitty-catt/haste-server#build-arguments
+    oc new-app --name=hastebin --as-deployment-config --build-env BASE_IMAGE=node:15.12.0-stretch https://github.com/kitty-catt/haste-server#build-arguments
 
 
 
