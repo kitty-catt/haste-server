@@ -1,3 +1,8 @@
+# Openshift / Tekton explorations
+
+On [openshift](openshift.md) the Dockerfile can be build where the FROM image is overridden in the Tekton buildah based build.
+
+
 # Haste
 
 Haste is an open-source pastebin software written in node.js, which is easily
