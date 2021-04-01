@@ -10,9 +10,9 @@ The parameterized build only works in podman. I could not get it to use the para
 
 Install Tekton Operator
 
-  oc adm policy add-scc-to-user privileged system:serviceaccount:haste-server:pipeline
-  oc apply -f tekton-resource/pipeline-resources-pnst.yaml 
-  oc apply -f tekton-resource/pipeline-resources-pnst.yaml 
+    oc adm policy add-scc-to-user privileged system:serviceaccount:haste-server:pipeline
+    oc apply -f tekton-resource/pipeline-resources-pnst.yaml 
+    oc apply -f tekton-resource/pipeline-resources-pnst.yaml 
 
 https://github.com/containers/buildah/pull/2823
 
