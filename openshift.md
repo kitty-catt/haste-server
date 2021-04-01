@@ -62,30 +62,30 @@ https://github.com/containers/buildah/pull/2823
 
 # Appendix - 14.8.0-stretch
 
-$ sudo podman inspect node:14.8.0-stretch
-[
-    {
-        "Id": "784e696f50608aa3920d0fde0e2a9218409d166148559c34072ca71ea5577d17",
-        "Digest": "sha256:8b6401f8d15c900736a54a870994277b3de19ebd28cc483c497bf00d608e2a90",
-        "RepoTags": [
-            "docker.io/library/node:14.8.0-stretch"
-        ],
-        "RepoDigests": [
-            "docker.io/library/node@sha256:8b6401f8d15c900736a54a870994277b3de19ebd28cc483c497bf00d608e2a90",
-            "docker.io/library/node@sha256:a3f4bcda6ea59aaf94ee8f9494ec12008557ef33647a43341a79002b6d7d0eed"
-        ],
+    $ sudo podman inspect node:14.8.0-stretch
+    [
+        {
+            "Id": "784e696f50608aa3920d0fde0e2a9218409d166148559c34072ca71ea5577d17",
+            "Digest": "sha256:8b6401f8d15c900736a54a870994277b3de19ebd28cc483c497bf00d608e2a90",
+            "RepoTags": [
+                "docker.io/library/node:14.8.0-stretch"
+            ],
+            "RepoDigests": [
+                "docker.io/library/node@sha256:8b6401f8d15c900736a54a870994277b3de19ebd28cc483c497bf00d608e2a90",
+                "docker.io/library/node@sha256:a3f4bcda6ea59aaf94ee8f9494ec12008557ef33647a43341a79002b6d7d0eed"
+            ],
 
 # Appendix - 15.12.0-stretch
 
-$ sudo podman inspect node:15.12.0-stretch
-[
-    {
-        "Id": "2530199d91c24f9d1843db28709e9d2d47b0ef59d9bb2bcdf208dee26474755a",
-        "Digest": "sha256:35b326a83fc2d8d3f34b2b72c62e25eed19a3a83c501650edcd722242ed0249f",
-        "RepoTags": [
-            "docker.io/library/node:15.12.0-stretch"
-        ],
-        "RepoDigests": [
-            "docker.io/library/node@sha256:35b326a83fc2d8d3f34b2b72c62e25eed19a3a83c501650edcd722242ed0249f",
-            "docker.io/library/node@sha256:d66c11f62793ec5d00678a387b0279781b6b84190e720eb5422a4566c4bbc25f"
-        ],
+    $ sudo podman inspect node:15.12.0-stretch
+    [
+        {
+            "Id": "2530199d91c24f9d1843db28709e9d2d47b0ef59d9bb2bcdf208dee26474755a",
+            "Digest": "sha256:35b326a83fc2d8d3f34b2b72c62e25eed19a3a83c501650edcd722242ed0249f",
+            "RepoTags": [
+                "docker.io/library/node:15.12.0-stretch"
+            ],
+            "RepoDigests": [
+                "docker.io/library/node@sha256:35b326a83fc2d8d3f34b2b72c62e25eed19a3a83c501650edcd722242ed0249f",
+                "docker.io/library/node@sha256:d66c11f62793ec5d00678a387b0279781b6b84190e720eb5422a4566c4bbc25f"
+            ],
