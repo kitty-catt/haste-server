@@ -15,6 +15,8 @@ Install Tekton Operator
     oc apply -f tekton-resource/pipeline-resources-pnst.yaml 
     oc apply -f tekton-resource/pipeline-resources-pnst.yaml 
 
+Create a pipeline via the editor and run it with the tekton resources.
+
 https://github.com/containers/buildah/pull/2823
 
 # BuildConfig based approach (does not work)
