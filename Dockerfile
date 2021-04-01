@@ -1,3 +1,5 @@
+FROM node:14.8.0-stretch
+
 FROM $BASE_IMAGE
 
 ENV MYLABEL=$BASE_IMAGE
