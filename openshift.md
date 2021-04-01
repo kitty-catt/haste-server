@@ -5,17 +5,18 @@ That would give us 1 place in the tekton pipeline to set it for builds and scans
 
 The parameterized build only works in podman. I could not get it to use the parameter in openshift.
 
-# Tekton Approach
+# Tekton Approach (works!)
+
 
 Install Tekton Operator
 
-oc adm policy add-scc-to-user privileged system:serviceaccount:haste-server:pipeline
-oc apply -f tekton-resource/pipeline-resources-pnst.yaml 
-oc apply -f tekton-resource/pipeline-resources-pnst.yaml 
+  oc adm policy add-scc-to-user privileged system:serviceaccount:haste-server:pipeline
+  oc apply -f tekton-resource/pipeline-resources-pnst.yaml 
+  oc apply -f tekton-resource/pipeline-resources-pnst.yaml 
 
 https://github.com/containers/buildah/pull/2823
 
-# BuildConfig based approach
+# BuildConfig based approach (does not work)
 
 spec:
   ..
@@ -40,7 +41,7 @@ spec:
     type: Docker
 
 
-# Procedure
+# Podman Procedure (works)
 
 git clone https://github.com/kitty-catt/haste-server
 git checkout build-arguments
