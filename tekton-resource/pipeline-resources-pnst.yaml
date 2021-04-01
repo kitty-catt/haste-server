@@ -1,0 +1,23 @@
+apiVersion: v1
+items:
+- apiVersion: tekton.dev/v1alpha1
+  kind: PipelineResource
+  metadata:
+    name: internal-image-url-pnst
+  spec:
+    params:
+    - name: url
+      value: image-registry.openshift-image-registry.svc:5000/haste-server/haste-server-build-output
+    type: image    
+- apiVersion: tekton.dev/v1alpha1
+  kind: PipelineResource
+  metadata:
+    name: src-haste-server
+  spec:
+    params:
+    - name: revision
+      value: build-arguments
+    - name: url
+      value: https://github.com/kitty-catt/haste-server
+    type: git
+kind: List
